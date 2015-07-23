@@ -1,6 +1,7 @@
 lib
 .tests
 .src
+.DS_Store
 
 # Logs
 logs

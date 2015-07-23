@@ -1,4 +1,4 @@
-import path from 'path';
+§import path from 'path';
 import fs from 'fs-extra';
 
 import chai from 'chai';
@@ -26,6 +26,7 @@ describe('Unit: Server class', () => {
     fs.removeSync(tmproot);
   });
 
+  // TODO(Markus): Need to clean up .src folder after test.
   it('can transform the given folder and copy it to a tmp location', () => {
     const nordServer = new Server(path.join(__dirname, '..', '..', 'src'));
     const outPath = nordServer.rootPath;

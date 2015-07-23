@@ -1,5 +1,6 @@
 lib
 .tests
+.src
 
 # Logs
 logs

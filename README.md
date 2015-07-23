@@ -1,2 +1,2 @@
-# nord-core
-The core of Nord.js, the next generation backend framework
+# Nord.js
+Next generation backend framework

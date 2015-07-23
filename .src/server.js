@@ -47,7 +47,6 @@ var NordServer = (function () {
    */
 
   NordServer.prototype.transformAppCode = function transformAppCode() {
-    console.log(this.userRootPath);
     var appFiles = _glob.sync(this.userRootPath + '/**/*.js');
     var outFiles = [];
     var babelOptions = {
@@ -73,17 +72,12 @@ var NordServer = (function () {
 
       var filePath = _ref;
 
-      console.log('filePath', filePath);
-
       var _transformFileSync = _babel.transformFileSync(filePath, babelOptions);
 
       var code = _transformFileSync.code;
 
       var filename = _path2['default'].relative(this.userRootPath, filePath);
-      console.log('filename', filename);
-      console.log('this.rootPath', this.rootPath);
       var outFile = _path2['default'].join(this.rootPath, filename);
-      console.log('outFile', outFile);
       _fsExtra2['default'].outputFileSync(outFile, code);
       outFiles.push(outFile);
     }

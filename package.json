@@ -7,17 +7,14 @@
     "build": "babel src --out-dir lib",
     "build:watch": "babel src --out-dir lib --watch",
     "buildtest": "babel tests --out-dir .tests",
-
     "lint": "eslint index.js src tests",
-
+    "posttest": "rm -rf lib .tests",
+    "posttest-no-lint": "npm run posttest",
     "preinstall": "npm run build",
-
     "pretest": "npm run lint && npm run build && npm run buildtest",
     "pretest-no-lint": "npm run build && npm run buildtest",
     "test": "mocha --reporter spec .tests/**/*-test.js",
-    "test-no-lint": "mocha --reporter spec .tests/**/*-test.js",
-    "posttest": "rm -rf lib .tests",
-    "posttest-no-lint": "npm run posttest"
+    "test-no-lint": "mocha --reporter spec .tests/**/*-test.js"
   },
   "repository": {
     "type": "git",
@@ -44,9 +41,10 @@
     "glob": "^5.0.14"
   },
   "devDependencies": {
-    "babel-eslint": "^3.1.23",
+    "babel-eslint": "^3.1.26",
     "chai": "^3.0.0",
-    "eslint": "^0.24.1",
+    "eslint": "^1.0.0-rc-2",
+    "eslint-config-nord-rules": "^1.0.1",
     "mocha": "^2.2.5",
     "shelljs": "^0.5.1",
     "sinon": "^1.15.4",
